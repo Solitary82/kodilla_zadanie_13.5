@@ -5,9 +5,13 @@ function getOSinfo() {
     var type = os.type();
     if(type === 'Darwin') {
         type = 'OSX';
+    } else if(type === 'Windows_NT') {
+        type = 'Windows'; 
     } else {
-        type = 'Windows';
-    }
+        type = 'Linux';
+    }   
+
+
     var release = os.release();
     var cpu = os.cpus()[0].model;
     var uptime = os.uptime();
